@@ -585,6 +585,7 @@ footer {
   background-color: #282828;
 }
 .nearfooter h1 {
+  text-align: center;
   font-size: 45px;
   color: #ffffff;
 }
@@ -780,7 +781,7 @@ footer {
   .categories {
     height: 50px;
     background: none;
-    color: #e93656;
+    color: #15bcb6;
   }
   .project {
     grid-template-columns: repeat(2, 1fr);
@@ -864,5 +865,32 @@ footer {
 @media (max-width: 727px) {
   .quote-image {
     display: none;
+  }
+  .project {
+    grid-template-columns: 100%;
+    margin: auto;
+    vertical-align: center;
+  }
+  .categories {
+    margin-bottom: 50px;
+  }
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 360px 360px 360px 360px;
+  }
+  .quotes h3 {
+    font-size: 10px;
+  }
+}
+@media (max-width: 440px){
+  .categories {
+    margin-bottom: 70px;
+  }
+  ul {
+    font-size: 13px;
   }
 }
