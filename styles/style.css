@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+list-style-type: none;
+}
+body {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+.media {
+  max-width: 30px;
+  width: auto;
+  height: auto;
+}
+.logos {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+}
+.logos img {
+  max-width: 30px;
+}
+.profimg {
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+}
+.greyback {
+  position: relative;
+}
+.slider-item {
+  display: none;
+  position: relative;
+}
+.slider-item.active {
+  display: block;
+}
+.maininfo {
+  position: absolute;
+  top: 384.27px;
+  left: 65%;
+  z-index: 10;
+  color: aliceblue;
+}
+.btns {
+  position: absolute;
+  bottom: 50px;
+  left: 49%;
+  display: flex;
+  align-items: center;
+}
+.btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: rgb(109, 158, 228);
+  opacity: 0.6;
+}
+.btn:hover {
+  background-color: blue;
+  opacity: 0.8;
+}
+#previous-img,
+#next-img {
+  width: 40px;
+  height: 20px;
+  border-radius: 8px;
+  background-color: rgb(226, 226, 226);
+  opacity: 0.6;
+}
+#previous-img:hover,
+#next-img:hover {
+  background-color: rgb(228, 228, 228);
+  opacity: 0.8;
+}
+.greeting {
+  font-family: "Glacial Indifference";
+  font-size: 49.7px;
+}
+.myname {
+  font-family: "Glacial Indifference";
+  font-weight: bold;
+  font-size: 71px;
+  letter-spacing: 1.06px;
+}
+.study {
+  font-family: "Glacial Indifference";
+  font-size: 23.29px;
+}
+.slidebtn {
+  height: 20px;
+}
+.container {
+  padding: 135px 359px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bio-info {
+  text-align: end;
+}
+.short-info {
+  max-width: 334px;
+  width: auto;
+  font-family: "Muli";
+  font-size: 15px;
+  margin-top: 33px;
+  margin-bottom: 60px;
+  line-height: 26px;
+  letter-spacing: 0.45px;
+}
+
+.container img {
+  max-width: 430px;
+  width: 100%;
+}
+.name {
+  font-family: "Glacial Indifference";
+  font-size: 40px;
+  margin-bottom: 6px;
+}
+.bio-info span {
+  font-family: "Muli";
+  font-size: 14px;
+  color: hsla(46, 79%, 48%, 1);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.hireme {
+  font-family: "Glacial Indifference";
+  color: #ffffff;
+  font-size: 15px;
+  background-color: #e93656;
+  padding: 15px 50px;
+  border: none;
+  cursor: pointer;
+}
+.mycontact-info {
+  padding: 60px 480px;
+  background-color: #131a36;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.iconspace {
+  width: 90px;
+  height: 90px;
+  border: 2px dashed #ffffff;
+  stroke-width: 8px;
+  opacity: 1;
+  border-radius: 50px;
+  padding: 28px 28px;
+}
+.iconspace:hover {
+  border: none;
+  background-color: #e93656;
+  padding: 30px;
+}
+.iconspace img {
+  width: 30px;
+  height: auto;
+}
+.contact-chart {
+  display: flex;
+  gap: 30px;
+}
+.contact-chart p {
+  font-family: "Glacial Indifference";
+  font-size: 25px;
+  color: #ffffff;
+  line-height: 30px;
+  letter-spacing: 0.75px;
+  margin-bottom: 15px;
+}
+.contact-chart span {
+  font-family: "Muli";
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  color: #dfdfdf;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 360px 360px;
+  grid-gap: 10px;
+}
+.articles {
+  padding: 203px 375px;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+.cover img {
+  width: 60px;
+  margin-bottom: 16px;
+}
+.cover p {
+  font-family: "Glacial Indifference";
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.44px;
+}
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popingup {
+  display: none;
+  color: #ffffff;
+}
+.popingup h4 {
+  font-family: "Glacial Indifference";
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0.44px;
+  margin-bottom: 19px;
+}
+.popingup p {
+  padding: 0 10px;
+  font-family: "Muli";
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.42px;
+  text-align: center;
+}
+.article:hover .popingup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article:hover .cover {
+  display: none;
+}
+.article:hover {
+  background-color: #15263e;
+  opacity: 98%;
+}
+#matrix-image {
+  max-width: 1920px;
+  width: 100%;
+}
+.recomendations {
+  position: relative;
+}
+.quotes-slider {
+  position: absolute;
+  top: 211px;
+  left: 417.84px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 153px;
+}
+.quotes {
+  width: 934.16px;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  color: #ffffff;
+}
+.quotes.active {
+  display: flex;
+}
+.quote-image {
+  padding: 30px;
+  border-radius: 120px;
+  border: 2px dashed #ffffff;
+  opacity: 1;
+}
+.quote-image img {
+  max-width: 140px;
+  border-radius: 70px;
+}
+.quotes h3 {
+  font-family: "Roboto";
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.45px;
+  max-width: 497px;
+  text-align: end;
+}
+.quotes h4 {
+  font-size: 100px;
+  line-height: 30px;
+  margin-bottom: 18px;
+}
+.quotes span {
+  font-family: "Roboto";
+  font-size: 13px;
+  letter-spacing: 0.52px;
+  color: #e93656;
+}
+.author {
+  font-family: "Glacial Indifference";
+  font-size: 22px;
+  margin-top: 9px;
+}
+.square {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #ffffff;
+  background: none;
+  cursor: pointer;
+}
+.square:hover,
+.square.pink-border {
+  border: 2px solid #e93656;
+}
+.squarebtn {
+  display: flex;
+  flex-direction: column;
+  gap: 14.53px;
+}
+h2 {
+  font-family: "Glacial Indifference";
+  font-weight: bold;
+  font-size: 70px;
+  text-align: center;
+}
+.last-project{
+  margin-top: 55px;
+  display: flex;
+  gap: 30px;
+}
+.project-article{
+  position: relative;
+}
+.pr-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 105px 48px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center; 
+  background-color: #323164;
+}
+.project-article:hover .pr-info{
+display: flex;
+}
+.pr-info span{
+  font-family: 'Muli';
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #DDDDDD;  
+}
+.pr-info p {
+  font-family: 'Glacial Indifference';
+  font-size: 23px;
+  color: #FFFFFF;
+  margin-top: 7px;
+  width: 194px;
+}
+.like {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #E93656;
+  border-radius: 50%;
+  background: none;
+  margin-bottom: 17px;
+  cursor: pointer;
+}
+.like img{
+  width: 20px;
+  text-align: center;
+}
+.project{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0;
+}
+.pr-cover{
+  width: 300px;
+  height: 350px;
+}
+.categories{
+  padding: 55px 60px;
+  background-color: #15263E;
+  color: #FFFFFF;
+  height: 401px;
+}
+ul{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Glacial Indifference';
+  gap: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+li:hover {
+  color: #E93656;
+}
+.project-article.vanish{
+  display: none;
+}
+.chooseBtn.pink-border{
+  color: #E93656;
+}
+.alonetext {
+  font-family: 'Glacial Indifference';
+  color: #2ED279;
+  font-size: 13px;
+  line-height: 36px;
+  text-align: center;
+}
+.latestarticles{
+  padding: 0 390px;
+}
+.logo-info {
+  padding: 44px 33px;
+  border: 4px solid #E93656;
+  text-align: center;
+  display: none;
+}
+.logo img{
+ width: 110px;
+ margin: 40px 60px;
+}
+.logo:hover img{
+  display: none;
+}
+.logo:hover .logo-info{
+  display: block;
+}
+.logo-info h4{
+  /* ახალი ფონტი */
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.logo-info p{
+  font-family: 'Roboto';
+  font-size: 13px;
+  color: #626262;
+  width: 164px;
+}
+.logo {
+  max-width: 230px;
+}
+.rosateam {
+  display: flex;
+  align-items: center;
+}
