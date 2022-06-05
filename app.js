@@ -119,3 +119,121 @@ function chooseCategory(index) {
     }
   });
 }
+
+const form = document.querySelector("#user-login-form");
+const emailInput = document.querySelector('input[name="email"]');
+const nameInput = document.querySelector('input[name="name"]');
+const websiteInput = document.querySelector('input[name="website"]');
+const messageInput = document.querySelector('textarea[name="user-message"]');
+const modalPop = document.querySelector(".modal");
+const modalBtn = document.querySelector(".done");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const isEmailValid = validateEmail();
+  const isNameValid = validateName();
+  const isWebsiteValid = validateWebsite();
+  const isMessageValid = validateMessage();
+
+  if (isEmailValid && isNameValid && isWebsiteValid && isMessageValid) {
+    const userData = {
+      name: nameInput.value,
+      email: emailInput.value,
+      website: websiteInput.value,
+      message: messageInput.value,
+    };
+    sendMessage(userData);
+  
+    // submitBtn.addEventListener('click', openModal())
+  }
+});
+
+function openModal() {
+  modalPop.classList.add("visible");
+}
+function closeModal() {
+  modalPop.classList.remove("visible");
+}
+
+modalBtn.addEventListener("click", () => {
+  closeModal();
+});
+
+async function sendMessage(userData) {
+  try {
+    const response = await fetch("http://api.kesho.me/v1/user-test/contact", {
+      method: "post",
+      body: JSON.stringify(userData),
+      headers: { "Content-Type": "application/json" },
+    });
+    await response.json();
+    openModal();
+  } catch (e) {
+    console.log("Error - ", e);
+  }
+}
+
+function validateEmail() {
+  if (!emailInput.value) {
+    emailInput.classList.add("has-error");
+    emailInput.parentNode.querySelector(".error-message").innerText =
+      "Please enter email address";
+    return false;
+  }
+  if (!emailInput.value.includes("@") || !emailInput.value.includes(".")) {
+    emailInput.classList.add("has-error");
+    emailInput.parentNode.querySelector(".error-message").innerText =
+      "Invalid email";
+    return false;
+  }
+  emailInput.classList.remove("has-error");
+  emailInput.parentNode.querySelector(".error-message").innerText = "";
+  return true;
+}
+
+function validateName() {
+  if (!nameInput.value) {
+    nameInput.classList.add("has-error");
+    nameInput.parentNode.querySelector(".error-message").innerText =
+      "Please enter your name";
+    return false;
+  }
+  nameInput.classList.remove("has-error");
+  nameInput.parentNode.querySelector(".error-message").innerText = "";
+  return true;
+}
+
+function validateWebsite() {
+  if (!websiteInput.value) {
+    websiteInput.classList.add("has-error");
+    websiteInput.parentNode.querySelector(".error-message").innerText =
+      "Please enter your website";
+    return false;
+  }
+  if (
+    !(
+      websiteInput.value.includes("https://") ||
+      emailInput.value.includes("http://")
+    )
+  ) {
+    websiteInput.classList.add("has-error");
+    websiteInput.parentNode.querySelector(".error-message").innerText =
+      "Invalid website";
+    return false;
+  }
+  websiteInput.classList.remove("has-error");
+  websiteInput.parentNode.querySelector(".error-message").innerText = "";
+  return true;
+}
+
+function validateMessage() {
+  if (!messageInput.value) {
+    messageInput.classList.add("has-error");
+    messageInput.parentNode.querySelector(".error-message").innerText =
+      "Please enter Message";
+    return false;
+  }
+  messageInput.classList.remove("has-error");
+  messageInput.parentNode.querySelector(".error-message").innerText = "";
+  return true;
+}
