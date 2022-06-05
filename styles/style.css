@@ -286,6 +286,7 @@ body {
 }
 .quote-image img {
   max-width: 140px;
+  width: auto;
   border-radius: 70px;
 }
 .quotes h3 {
@@ -588,6 +589,9 @@ footer {
   color: #ffffff;
 }
 .nearfooter p {
+  max-width: 700px;
+  width: auto;
+  text-align: center;
   color: #a5a5a5;
   font-size: 17px;
 }
@@ -725,8 +729,7 @@ footer {
   .logo-info,
   .modal-content,
   .nearfooter,
-  .info-article,
-  .year {
+  .info-article {
     padding: 20px;
     margin: auto;
   }
@@ -761,5 +764,105 @@ footer {
   }
 }
 
+@media (max-width: 1146px) {
+  .dissapear {
+    display: none;
+  }
+  .last-project {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  ul {
+    flex-direction: row;
+  }
+  .categories {
+    height: 50px;
+    background: none;
+    color: #e93656;
+  }
+  .project {
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    vertical-align: center;
+  }
+  .maininfo {
+    top: 10%;
+    left: 65%;
+  }
+  .maininfo .myname,
+  .maininfo .greeting {
+    font-size: 42px;
+  }
+
+  .maininfo .logos {
+    display: none;
+  }
+  .contact-container {
+    top: 0;
+    left: 10%;
+    right: 200px;
+  }
+  .contact-us {
+    position: static;
+    background-color: #323164;
+  }
+  .cont-info h2 {
+    color: #ffffff;
+    font-size: 42px;
+  }
+  .cont-info p {
+    color: #a5a5a5;
+  }
+  .contact-us img {
+    display: none;
+  }
+  .contact-container {
+    position: static;
+  }
+  .yeareleven,
+  .bluring {
+    grid-template-columns: 50% 50%;
+  }
+  .mycontact-info, .container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .flex{
+    flex-direction: column;
+    gap: 0;
+  }
+  .quotes-slider
+  .squarebtn{
+    flex-direction: row;
+
+  }
+  .quote-image img{
+    max-width: 70px;
+
+  }
+}
 @media (max-width: 768px) {
+  .maininfo .greeting, .maininfo .myname{
+    font-size: 24px;
+  }
+    .maininfo .study {
+    font-size: 12px;
+  }
+  .btns button{
+ width: 10px;
+  }
+  .btn{
+    height: 10px;
+  }
+  .btns{
+    left: 40%;
+    bottom: 5px;
+  }
+}
+@media (max-width: 727px) {
+  .quote-image {
+    display: none;
+  }
 }
